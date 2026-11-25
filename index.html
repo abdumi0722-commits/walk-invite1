@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Для тебя ✨</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Мерцающие точки на фоне -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Слой для падающих цветочков по всему экрану -->
+  <div class="falling-flowers" id="fallingFlowers"></div>
+
+  <!-- Песню (music.mp3) можно положить в папку проекта позже -->
+  <audio id="bgMusic" src="Ax_and_the_Hatchetmen_-_Hotel_Room_81231972.mp3" preload="auto" loop></audio>
+
+  <!-- Мини-плеер слева -->
+  <aside class="music-player hidden" id="musicPlayer">
+    <div class="player-cover">
+      <div class="cover-art" id="coverArt">
+        <img
+          src="https://imgs.search.brave.com/UiYJG_51skqLkbGd3c9-aHP78u42Kd1Vq9R8TIjGWQQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9leHRl/cm5hbC1wcmV2aWV3/LnJlZGQuaXQvZnJl/c2gtYXgtYW5kLXRo/ZS1oYXRjaGV0bWVu/LWhvdGVsLXJvb20t/djAtT2dZNjdYRXhC/Q1RVVXhXSVZ3ZWdZ/QTQxdVJGcTRTd3Za/ZkdscEFnZVp0NC5q/cGVnP3dpZHRoPTY0/MCZjcm9wPXNtYXJ0/JmF1dG89d2VicCZz/PWNhNmJjOTY0OWZh/YzUzMjcyZjRkNTFm/YmFjZmQ3ZTVkMTMw/ZDY3YjQ"
+          alt="Hotel Room"
+          class="cover-image"
+        />
+      </div>
+    </div>
+
+    <div class="player-meta">
+      <div class="player-title">Hotel Room</div>
+      <div class="player-artist">Hatchetmen</div>
+    </div>
+
+    <div class="player-progress-wrap" id="progressContainer" title="Перемотать">
+      <div class="player-progress-track">
+        <div class="player-progress-fill" id="progressBar"></div>
+        <div class="player-progress-thumb" id="progressThumb"></div>
+      </div>
+    </div>
+
+    <div class="player-actions">
+      <button type="button" class="player-mini-btn" id="prevBtn" aria-label="В начало">⏮</button>
+      <button type="button" class="player-main-btn" id="playPauseBtn" aria-label="Пауза или воспроизведение">❚❚</button>
+      <button type="button" class="player-mini-btn" id="nextBtn" aria-label="Вперед на 10 сек">⏭</button>
+    </div>
+  </aside>
+
+  <!-- Главная сцена -->
+  <main class="stage">
+    <!-- Коробка с подарком -->
+    <div class="gift-wrapper" id="giftWrapper">
+      <div class="gift-box" id="giftBox">
+        <div class="gift-lid">
+          <div class="bow"></div>
+          <div class="ribbon-horizontal"></div>
+        </div>
+        <div class="gift-body">
+          <div class="ribbon-vertical"></div>
+          <div class="ribbon-horizontal"></div>
+        </div>
+        <!-- Крупные цветы вокруг коробки при раскрытии -->
+        <div class="box-flowers">
+          <span class="box-flower bf1">🌸</span>
+          <span class="box-flower bf2">🌺</span>
+          <span class="box-flower bf3">🌼</span>
+          <span class="box-flower bf4">🌷</span>
+          <span class="box-flower bf5">🌹</span>
+        </div>
+      </div>
+      <p class="tap-hint" id="tapHint">✨ Нажми на подарок, чтобы открыть ✨</p>
+    </div>
+
+    <!-- Открытка с приглашением -->
+    <section class="invite-card hidden" id="inviteCard">
+      <p class="invite-subtitle">Специальное приглашение</p>
+      <h1 class="invite-text">
+        Я тебя приглашаю на прогулку в парк Фонда Первого Президента
+      </h1>
+      <p class="invite-note">Напиши, когда и во сколько тебе будет удобно ✨</p>
+
+      <div class="actions" id="actionsArea">
+        <!-- ЗАМЕНИ YOUR_INSTAGRAM НА СВОЙ НИК В ИНСТАГРАМ -->
+        <a
+          href="https://instagram.com/YOUR_INSTAGRAM"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-yes"
+          id="yesBtn"
+        >
+          Да, согласна ❤️
+        </a>
+
+        <button type="button" class="btn btn-no" id="noBtn">
+          Нет
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
